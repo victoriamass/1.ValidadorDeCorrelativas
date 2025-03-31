@@ -1,4 +1,10 @@
 @startuml
+
+Inscripcion --> "*" Materia
+Materia --> "*" Materia
+Inscripcion --> Alumno
+Alumno --> "*" Materia
+
 class Inscripcion {
     - materiasSolicitadas : Set<Materia>
     - alumnoSolicitante : Alumno
@@ -29,8 +35,4 @@ class Materia {
     + getMateriasCorrelativas(): Set<Materia>
     + agregarMateriaCorrelativa(Materia materiaCorrelativa): void
 }
-Inscripcion --> "*" Materia
-Materia --> "*" Materia
-Inscripcion --> Alumno
-Alumno --> "*" Materia
 @enduml
